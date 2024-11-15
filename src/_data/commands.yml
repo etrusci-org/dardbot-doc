@@ -3,17 +3,21 @@ anto:
   arguments: "<word>"
   permission: "user"
   description: "Antonyms for a word."
+  notes:
   examples:
-    - "?anto light"
-    - "?a light"
+    - "?anto learning"
+    - "--- aliased ---"
+    - "?a learning"
 
 dict:
   alias: "d"
   arguments: "<word>"
   permission: "user"
   description: "Definition of a word."
+  notes:
   examples:
     - "?dict sun"
+    - "--- aliased ---"
     - "?d sun"
 
 enigma:
@@ -21,8 +25,10 @@ enigma:
   arguments:
   permission: "user"
   description: "Enigmatic phrase."
+  notes:
   examples:
     - "?enigma"
+    - "--- aliased ---"
     - "?e"
 
 help:
@@ -30,44 +36,68 @@ help:
   arguments:
   permission: "user"
   description: "Link to help."
+  notes:
   examples:
     - "?help"
+    - "--- aliased ---"
     - "?h"
-
-# lastfm:
-#   alias: "lfm"
-#   arguments:
-#   permission: "user"
-#   description:
-#   examples:
 
 leet:
   alias: "eleet"
   arguments:
   permission: "user"
-  description: |
-    Translate text to leet-speak.
-    If invoked with the alias `eleet`, the translation will be more complex.
+  description: Translate text to leet-speak.
+  notes: If invoked with the alias `eleet`, the translation will be more complex.
   examples:
-    - "?leet Hello world"
-    - "?eleet Hello world"
+    - "?leet hello world"
+    - "--- aliased ---"
+    - "?eleet hello world"
+
+music:
+  alias: "m"
+  arguments: <method>, <query>
+  permission: "user"
+  description: Links to music infos.
+  notes: |
+    Query types for methods:
+    - `similiar`: artist name
+    - `release`: release name
+    - `artist`: artist name
+    - `label`: label name
+    - `random`: does as only method currently not need a query
+  examples:
+    - "?music similiar, ugly heroes"
+    - "?music release, kopfnicker"
+    - "?music artist, wu-tang"
+    - "?music label, n5md"
+    - "?music random"
+    - "--- aliased ---"
+    - "?m similiar, ugly heroes"
+    - "?m release, kopfnicker"
+    - "?m artist, wu-tang"
+    - "?m label, n5md"
+    - "?m random"
 
 qrcode:
   alias: "qr"
   arguments: "<text>"
   permission: "user"
   description: "Generate a QR code."
+  notes:
   examples:
-    - "?qrcode Hello world"
-    - "?qr Hello world"
+    - "?qrcode hello world"
+    - "--- aliased ---"
+    - "?qr hello world"
 
 quote:
   alias: "q"
   arguments:
   permission: "user"
   description: "Random quote."
+  notes:
   examples:
     - "?quote"
+    - "--- aliased ---"
     - "?q"
 
 rhyme:
@@ -75,8 +105,10 @@ rhyme:
   arguments: "<word>"
   permission: "user"
   description: "Rhyme words."
+  notes:
   examples:
     - "?rhyme hello"
+    - "--- aliased ---"
     - "?r hello"
 
 syno:
@@ -84,15 +116,18 @@ syno:
   arguments: "<word>"
   permission: "user"
   description: "Synonyms for a word."
+  notes:
   examples:
-    - "?syno heavy"
-    - "?s heavy"
+    - "?syno learning"
+    - "--- aliased ---"
+    - "?s learning"
 
 sys:
   alias:
   arguments:
   permission: "admin"
   description: "System info."
+  notes:
   examples:
     - "?sys"
 
@@ -101,6 +136,7 @@ tcmd:
   arguments: "<command>"
   permission: "admin"
   description: "Toggle commands off/on."
+  notes:
   examples:
     - "?tcmd quote    # it's disabled now"
     - "?tcmd quote    # it's enabled again"
@@ -110,10 +146,12 @@ time:
   arguments: "<zone1>[, [zone2], [zone3], ...]"
   permission: "user"
   description: "Time of timezone."
+  notes:
   examples:
     - "?time los angeles"
     - "?time los angeles, japan, paris"
     - "?time angel, japa, pari"
+    - "--- aliased ---"
     - "?t los angeles"
     - "?t los angeles, japan, paris"
     - "?t angel, japa, pari"

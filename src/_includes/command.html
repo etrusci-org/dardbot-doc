@@ -6,7 +6,9 @@
 
 **Arguments**: {% if site.data.commands[page.command].arguments %}`{{ site.data.commands[page.command].arguments }}`{% else %}*none*{% endif %}
 
-**Permission**: `{{ site.data.commands[page.command].permission }}`
+**Permission**: {{ site.data.commands[page.command].permission }}
+
+**Notes**: {% if site.data.commands[page.command].notes %}<br>{% else %}*none*{% endif %}{{ site.data.commands[page.command].notes | newline_to_br }}
 
 **Examples**:
 

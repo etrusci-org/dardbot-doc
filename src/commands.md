@@ -2,7 +2,7 @@
 layout: default
 ---
 
-## Commands Overview
+## Commands Intro
 
 The more you know...
 - Prefix for all commands is `{{ site.data.shared.command_prefix }}`.
