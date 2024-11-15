@@ -16,6 +16,15 @@ dict:
     - "?dict sun"
     - "?d sun"
 
+enigma:
+  alias: "e"
+  arguments:
+  permission: "user"
+  description: "Enigmatic phrase."
+  examples:
+    - "?enigma"
+    - "?e"
+
 help:
   alias: "h"
   arguments:
