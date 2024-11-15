@@ -1,0 +1,110 @@
+anto:
+  alias: "a"
+  arguments: "<word>"
+  permission: "user"
+  description: "Antonyms for a word."
+  examples:
+    - "?anto light"
+    - "?a light"
+
+dict:
+  alias: "d"
+  arguments: "<word>"
+  permission: "user"
+  description: "Definition of a word."
+  examples:
+    - "?dict sun"
+    - "?d sun"
+
+help:
+  alias: "h"
+  arguments:
+  permission: "user"
+  description: "Link to help."
+  examples:
+    - "?help"
+    - "?h"
+
+# lastfm:
+#   alias: "lfm"
+#   arguments:
+#   permission: "user"
+#   description:
+#   examples:
+
+leet:
+  alias: "eleet"
+  arguments:
+  permission: "user"
+  description: |
+    Translate text to leet-speak.
+    If invoked with the alias `eleet`, the translation will be more complex.
+  examples:
+    - "?leet Hello world"
+    - "?eleet Hello world"
+
+qrcode:
+  alias: "qr"
+  arguments: "<text>"
+  permission: "user"
+  description: "Generate a QR code."
+  examples:
+    - "?qrcode Hello world"
+    - "?qr Hello world"
+
+quote:
+  alias: "q"
+  arguments:
+  permission: "user"
+  description: "Random quote."
+  examples:
+    - "?quote"
+    - "?q"
+
+rhyme:
+  alias: "r"
+  arguments: "<word>"
+  permission: "user"
+  description: "Rhyme words."
+  examples:
+    - "?rhyme hello"
+    - "?r hello"
+
+syno:
+  alias: "s"
+  arguments: "<word>"
+  permission: "user"
+  description: "Synonyms for a word."
+  examples:
+    - "?syno heavy"
+    - "?s heavy"
+
+sys:
+  alias:
+  arguments:
+  permission: "admin"
+  description: "System info."
+  examples:
+    - "?sys"
+
+tcmd:
+  alias:
+  arguments: "<command>"
+  permission: "admin"
+  description: "Toggle commands off/on."
+  examples:
+    - "?tcmd quote    # it's disabled now"
+    - "?tcmd quote    # it's enabled again"
+
+time:
+  alias: "t"
+  arguments: "<zone1>[, [zone2], [zone3], ...]"
+  permission: "user"
+  description: "Time of timezone."
+  examples:
+    - "?time los angeles"
+    - "?time los angeles, japan, paris"
+    - "?time angel, japa, pari"
+    - "?t los angeles"
+    - "?t los angeles, japan, paris"
+    - "?t angel, japa, pari"

@@ -1,0 +1,10 @@
+<ul>
+    <li><a href="./index.html">Index</a></li>
+    <li><a href="./commands.html">Commands</a>{% if page.url contains "command-" %}:{% endif %}</li>
+
+    {% if page.url contains "command-" %}
+        {% for cmd in site.data.commands %}
+            <li><a href="./command-{{ cmd[0] }}.html">{{ cmd[0] }}</a></li>
+        {% endfor %}
+    {% endif %}
+</ul>

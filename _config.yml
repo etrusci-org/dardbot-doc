@@ -1,0 +1,4 @@
+source: ./src/
+destination: ./dist/
+timezone: UTC
+strict_front_matter: true
