@@ -157,7 +157,9 @@ time:
   arguments: "<zone1>[, [zone2], [zone3], ...]"
   permission: "user"
   description: "Displays the current time for one or more time zones."
-  notes:
+  notes: |
+    Zone queries can be partial. E.g. `angel` will match `Los Angeles`.
+    A list of available timezones to query can be found [here](./timezones.txt).
   examples:
     - "?time los angeles"
     - "?time los angeles, japan, paris"

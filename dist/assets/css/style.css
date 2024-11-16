@@ -2,4 +2,18 @@ body {
   padding-bottom: 50vh;
 }
 
+h1 a, .nav a {
+  text-decoration: none;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-content: start;
+  align-items: stretch;
+  justify-content: start;
+}
+
 /*# sourceMappingURL=style.css.map */

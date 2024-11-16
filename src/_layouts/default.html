@@ -16,11 +16,9 @@
 <body>
 
     <header class="container">
-        <h1>{{ site.data.shared.site_title }}</h1>
+        <h1><a href="./">{{ site.data.shared.site_title }}</a></h1>
 
-        <nav>
-            {% include nav.html %}
-        </nav>
+        {% include nav.html %}
     </header>
 
     <main class="container">
