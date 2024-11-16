@@ -2,10 +2,8 @@
 layout: default
 ---
 
-Welcome to the manual for {{ site.data.shared.bot_name_long }}.
-
-![Data himself](./assets/images/data.png)
-
+![Data himself](./assets/images/data.png)  
+*{{ site.data.shared.bot_name_long }}*
 
 ## Updates
 

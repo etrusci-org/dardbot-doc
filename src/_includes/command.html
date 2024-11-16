@@ -8,10 +8,9 @@
 
 **Permission**: {{ site.data.commands[page.command].permission }}
 
-**Notes**: {% if site.data.commands[page.command].notes %}<br>{% else %}*none*{% endif %}{{ site.data.commands[page.command].notes | newline_to_br }}
+{% if site.data.commands[page.command].notes %}**Notes**:<br>{{ site.data.commands[page.command].notes | newline_to_br }}{% endif %}
 
 **Examples**:
-
 ```text{% for example in site.data.commands[page.command].examples %}
 {{ example }}{% endfor %}
 ```
