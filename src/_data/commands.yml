@@ -55,7 +55,7 @@ help:
 
 leet:
   alias: "eleet"
-  arguments:
+  arguments: "<text>"
   permission: "user"
   description: Converts text into leet-speak.
   notes: If invoked with the alias `eleet`, the translation will be more complex.
