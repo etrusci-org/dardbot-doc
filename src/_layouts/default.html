@@ -14,16 +14,27 @@
     <title>{{ site.data.shared.site_title }}</title>
 </head>
 <body>
+    <h1>{{ site.data.shared.site_title }}</h1>
 
     <header class="container">
-        <h1><a href="./">{{ site.data.shared.site_title }}</a></h1>
+        <article class="nav flex">
+            <a href="./"><strong>{{ site.data.shared.site_title }}</strong></a>
+            <a href="./commands.html">Commands</a>
+            <a href="./updates.html">Updates</a>
+            <a href="./about.html">About</a>
+        </article>
 
-        {% include nav.html %}
+        {% if page.url contains "command-" %}
+        <article class="nav flex">
+            {% for cmd in site.data.commands %}
+                <a href="./command-{{ cmd[0] }}.html">{{ cmd[0] }}</a>
+            {% endfor %}
+        </article>
+        {% endif %}
     </header>
 
     <main class="container">
         {{ content }}
     </main>
-
 </body>
 </html>

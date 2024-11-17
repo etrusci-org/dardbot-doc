@@ -2,6 +2,8 @@ body {
     padding-bottom: 50vh;
 }
 
+h1 { display: none; }
+
 h1, .nav {
     a {
         text-decoration: none;
@@ -14,10 +16,5 @@ h1, .nav {
     flex-wrap: wrap;
     gap: 1rem;
     align-content: start;
-    align-items: stretch;
     justify-content: start;
-
-    // &.wide {
-    //     gap: 1.5rem 2.5rem;
-    // }
 }
