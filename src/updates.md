@@ -7,7 +7,7 @@ layout: default
 We are still on the road to the first stable version.  
 All feedback is welcome. And don't be too shy to ask if something is unclear.
 
-<!-- 
+<!--
 Types of changes:
 - Removed for now removed features.
 - Changed for changes in existing functionality.
@@ -19,7 +19,9 @@ Types of changes:
 
 <!--
 Unreleased:
--
+- Removed: Aliases of all commands except `h` for `help` and `eleet` for `leet`. I'll let you decide which aliases make sense when we have the first final set of commands.
+- Changed: Tweaked command cooldowns.
+- Added: `dog` command.
 -->
 
 

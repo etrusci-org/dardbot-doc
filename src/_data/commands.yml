@@ -1,46 +1,47 @@
 anto:
-  alias: "a"
+  alias:
   arguments: "<word>"
   permission: "user"
   description: "Finds antonyms of a given word."
   notes:
   examples:
     - "?anto learning"
-    - "--- aliased ---"
-    - "?a learning"
 
 cat:
-  alias: "c"
+  alias:
   arguments:
   permission: "user"
   description: "Displays a random cat image."
   notes:
   examples:
     - "?cat"
-    - "--- aliased ---"
-    - "?c"
 
 dict:
-  alias: "d"
+  alias:
   arguments: "<word>"
   permission: "user"
   description: "Provides the definition of a word."
   notes:
   examples:
     - "?dict sun"
-    - "--- aliased ---"
-    - "?d sun"
+
+dog:
+  alias:
+  arguments:
+  permission: "user"
+  description: "Displays a random dog image."
+  notes:
+  examples:
+    - "?dog"
 
 enigma:
-  alias: "e"
+  alias:
   arguments:
   permission: "user"
   description: "Generates an enigmatic phrase."
   notes:
   examples:
     - "?enigma"
-    - "--- aliased ---"
-    - "?e"
 
 help:
   alias: "h"
@@ -65,7 +66,7 @@ leet:
     - "?eleet hello world"
 
 music:
-  alias: "m"
+  alias:
   arguments: <method>, <query>
   permission: "user"
   description: Finds music-related info like similar artists, releases, or labels.
@@ -82,56 +83,42 @@ music:
     - "?music artist, wu-tang"
     - "?music label, n5md"
     - "?music random"
-    - "--- aliased ---"
-    - "?m similiar, ugly heroes"
-    - "?m release, kopfnicker"
-    - "?m artist, wu-tang"
-    - "?m label, n5md"
-    - "?m random"
 
 qrcode:
-  alias: "qr"
+  alias:
   arguments: "<text>"
   permission: "user"
   description: "Generates a QR code from the given text."
   notes:
   examples:
     - "?qrcode hello world"
-    - "--- aliased ---"
-    - "?qr hello world"
 
 quote:
-  alias: "q"
+  alias:
   arguments:
   permission: "user"
   description: "Displays a random quote."
   notes:
   examples:
     - "?quote"
-    - "--- aliased ---"
-    - "?q"
 
 rhyme:
-  alias: "r"
+  alias:
   arguments: "<word>"
   permission: "user"
   description: "Finds words that rhyme with the given word."
   notes:
   examples:
     - "?rhyme hello"
-    - "--- aliased ---"
-    - "?r hello"
 
 syno:
-  alias: "s"
+  alias:
   arguments: "<word>"
   permission: "user"
   description: "Finds synonyms for a given word."
   notes:
   examples:
     - "?syno learning"
-    - "--- aliased ---"
-    - "?s learning"
 
 sys:
   alias:
@@ -149,11 +136,11 @@ tcmd:
   description: "Toggles specific commands off/on."
   notes:
   examples:
-    - "?tcmd quote    # it's disabled now"
-    - "?tcmd quote    # it's enabled again"
+    - "?tcmd quote    # assuming it was enabled first, command 'quote' is disabled now"
+    - "?tcmd quote    # command 'quote' is enabled again"
 
 time:
-  alias: "t"
+  alias:
   arguments: "<zone1>[, [zone2], [zone3], ...]"
   permission: "user"
   description: "Displays the current time for one or more time zones."
@@ -164,7 +151,3 @@ time:
     - "?time los angeles"
     - "?time los angeles, japan, paris"
     - "?time angel, japa, pari"
-    - "--- aliased ---"
-    - "?t los angeles"
-    - "?t los angeles, japan, paris"
-    - "?t angel, japa, pari"

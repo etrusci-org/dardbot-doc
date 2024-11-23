@@ -9,6 +9,7 @@ The more you know...
 - Both commands and arguments are case-insensitive.
 - Multiple arguments are separated with commas.
 - Invalid user input will be silently ignored in most cases.
+- All commands have cooldowns (per user), but we're still tweaking those.
 - `<argument>`=required `[argument]`=optional `|`=or
 
 For examples click a command below.

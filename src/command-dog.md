@@ -1,6 +1,6 @@
 ---
 layout: default
-command: anto
+command: dog
 ---
 
 {% include command.html %}

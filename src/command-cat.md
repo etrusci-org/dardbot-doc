@@ -4,4 +4,3 @@ command: cat
 ---
 
 {% include command.html %}
- 

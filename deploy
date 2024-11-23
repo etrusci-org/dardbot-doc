@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+./gentzfile
+
+rsync -r -t --progress --delete -c -l -H -z -s dist/ hetzner-srv1:/srv/www/dardbot.ourspace.ch/public/

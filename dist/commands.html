@@ -36,6 +36,7 @@
   <li>Both commands and arguments are case-insensitive.</li>
   <li>Multiple arguments are separated with commas.</li>
   <li>Invalid user input will be silently ignored in most cases.</li>
+  <li>All commands have cooldowns (per user), but we’re still tweaking those.</li>
   <li><code class="language-plaintext highlighter-rouge">&lt;argument&gt;</code>=required <code class="language-plaintext highlighter-rouge">[argument]</code>=optional <code class="language-plaintext highlighter-rouge">|</code>=or</li>
 </ul>
 
@@ -53,25 +54,31 @@
   <tbody>
     <tr>
       <td><a href="./command-anto.html">anto</a></td>
-      <td><code class="language-plaintext highlighter-rouge">a</code></td>
+      <td><em>none</em></td>
       <td><code class="language-plaintext highlighter-rouge">&lt;word&gt;</code></td>
       <td>user</td>
     </tr>
     <tr>
       <td><a href="./command-cat.html">cat</a></td>
-      <td><code class="language-plaintext highlighter-rouge">c</code></td>
+      <td><em>none</em></td>
       <td><em>none</em></td>
       <td>user</td>
     </tr>
     <tr>
       <td><a href="./command-dict.html">dict</a></td>
-      <td><code class="language-plaintext highlighter-rouge">d</code></td>
+      <td><em>none</em></td>
       <td><code class="language-plaintext highlighter-rouge">&lt;word&gt;</code></td>
       <td>user</td>
     </tr>
     <tr>
+      <td><a href="./command-dog.html">dog</a></td>
+      <td><em>none</em></td>
+      <td><em>none</em></td>
+      <td>user</td>
+    </tr>
+    <tr>
       <td><a href="./command-enigma.html">enigma</a></td>
-      <td><code class="language-plaintext highlighter-rouge">e</code></td>
+      <td><em>none</em></td>
       <td><em>none</em></td>
       <td>user</td>
     </tr>
@@ -89,31 +96,31 @@
     </tr>
     <tr>
       <td><a href="./command-music.html">music</a></td>
-      <td><code class="language-plaintext highlighter-rouge">m</code></td>
+      <td><em>none</em></td>
       <td><code class="language-plaintext highlighter-rouge">&lt;method&gt;, &lt;query&gt;</code></td>
       <td>user</td>
     </tr>
     <tr>
       <td><a href="./command-qrcode.html">qrcode</a></td>
-      <td><code class="language-plaintext highlighter-rouge">qr</code></td>
+      <td><em>none</em></td>
       <td><code class="language-plaintext highlighter-rouge">&lt;text&gt;</code></td>
       <td>user</td>
     </tr>
     <tr>
       <td><a href="./command-quote.html">quote</a></td>
-      <td><code class="language-plaintext highlighter-rouge">q</code></td>
+      <td><em>none</em></td>
       <td><em>none</em></td>
       <td>user</td>
     </tr>
     <tr>
       <td><a href="./command-rhyme.html">rhyme</a></td>
-      <td><code class="language-plaintext highlighter-rouge">r</code></td>
+      <td><em>none</em></td>
       <td><code class="language-plaintext highlighter-rouge">&lt;word&gt;</code></td>
       <td>user</td>
     </tr>
     <tr>
       <td><a href="./command-syno.html">syno</a></td>
-      <td><code class="language-plaintext highlighter-rouge">s</code></td>
+      <td><em>none</em></td>
       <td><code class="language-plaintext highlighter-rouge">&lt;word&gt;</code></td>
       <td>user</td>
     </tr>
@@ -131,7 +138,7 @@
     </tr>
     <tr>
       <td><a href="./command-time.html">time</a></td>
-      <td><code class="language-plaintext highlighter-rouge">t</code></td>
+      <td><em>none</em></td>
       <td><code class="language-plaintext highlighter-rouge">&lt;zone1&gt;[, [zone2], [zone3], ...]</code></td>
       <td>user</td>
     </tr>
