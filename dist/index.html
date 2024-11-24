@@ -6,22 +6,20 @@
     <meta name="color-scheme" content="dark light">
 
     <style>
-        body { font-family: sans-serif; font-size: 100%; padding: 0 1rem 3rem 1rem; }
-
+        body { font-family: sans-serif; font-size: 100%; padding: 0 1rem 3rem 1rem; line-height: 1.5; }
         header, main, footer { display: block; width: 600px; max-width: 100%; margin: 0 auto; }
-
         footer { margin-top: 50rem; }
-
         img { display: block; max-width: 100%; }
         img.avatar { width: 200px; height: auto; }
-
         details > summary { cursor: pointer; opacity: .75; }
         details[open] > summary, details > summary:hover { opacity: 1; }
         details > details { margin-left: 1rem; }
-
-        h2, h3 { display: inline-block; }
-
-        code { display: inline-block; padding: .1rem .4rem; font-size: inherit; border-width: 1px; border-style: dotted; }
+        h2, h3 { display: inline-block; margin: 1rem 0 0 0; }
+        ul { padding: 0; list-style: none; }
+        li { margin: 0 0 .5rem 0; }
+        ul ul { padding: 0 0 0 1rem; }
+        code { display: inline-block; padding: 0 .4rem; font-family: sans-serif; font-size: inherit; border-width: 1px; border-style: solid;}
+        code.opt { font-style: italic; border-style: dotted; }
     </style>
 
     <title>Data the Discord Bot</title>
@@ -44,48 +42,108 @@
 
             <p>Automatic documentation is provided once you start using a command. You can do so by either typing its slash command or click it in the list.</p>
             <!-- <p><img src="./screenshot.png" alt="Automatic documentation"></p> -->
+
+            <p>Server admins can adjust the permission for each command in the server apps settings.</p>
+            <!-- <p><img src="./screenshot.png" alt="Server app settings"></p> -->
+        </details>
+
+        <details>
+            <summary><h2>Commands</h2></summary>
+
+            <div class="cmd_doc"></div>
         </details>
 
         <details open>
             <summary><h2>Updates</h2></summary>
 
             <details>
-                <summary><h3>beta2 - 2024-11-16</h3></summary>
+                <summary><h3>beta3 - 2024-11-24</h3></summary>
 
-                <p>This is a complete rewrite from beta1 with better performance, control and more commands.</p>
                 <ul>
-                    <li>Removed: <strong>animal</strong> command.</li>
-                    <li>Changed: <strong>music</strong> command behaviour and arguments.</li>
-                    <li>Added: <strong>anto</strong> command.</li>
-                    <li>Added: <strong>cat</strong> command.</li>
-                    <li>Added: <strong>qrcode</strong> command.</li>
-                    <li>Added: <strong>rhyme</strong> command.</li>
-                    <li>Added: <strong>syno</strong> command.</li>
-                    <li>Added: <strong>tcmd</strong> command.</li>
+                    <li>Removed: <code>anto</code> command.</li>
+                    <li>Removed: <code>dict</code> command.</li>
+                    <li>Removed: <code>help</code> command.</li>
+                    <li>Removed: <code>syno</code> command.</li>
+                    <li>Removed: <code>tcmd</code> command.</li>
+                    <li>Changed: <code>sys</code> command renamed to <code>sysinfo</code>.</li>
+                    <li>Added: <code>echo</code> command.</li>
                 </ul>
             </details>
 
+            <details>
+                <summary><h3>beta2 - 2024-11-16</h3></summary>
+
+                <ul>
+                    <li>Removed: <code>animal</code> command.</li>
+                    <li>Changed: <code>music</code> command behaviour and arguments.</li>
+                    <li>Added: <code>anto</code> command.</li>
+                    <li>Added: <code>cat</code> command.</li>
+                    <li>Added: <code>qrcode</code> command.</li>
+                    <li>Added: <code>rhyme</code> command.</li>
+                    <li>Added: <code>syno</code> command.</li>
+                    <li>Added: <code>tcmd</code> command.</li>
+                </ul>
+            </details>
 
             <details>
                 <summary><h3>beta1  - 2024-11-06</h3></summary>
 
-                <p>First public beta.</p>
                 <ul>
-                    <li>Added: <strong>animal</strong> command.</li>
-                    <li>Added: <strong>enigma</strong> command.</li>
-                    <li>Added: <strong>help</strong> command.</li>
-                    <li>Added: <strong>leet</strong> command.</li>
-                    <li>Added: <strong>music</strong> command.</li>
-                    <li>Added: <strong>quote</strong> command.</li>
-                    <li>Added: <strong>sys</strong> command.</li>
-                    <li>Added: <strong>time</strong> command.</li>
+                    <li>Added: <code>animal</code> command.</li>
+                    <li>Added: <code>enigma</code> command.</li>
+                    <li>Added: <code>help</code> command.</li>
+                    <li>Added: <code>leet</code> command.</li>
+                    <li>Added: <code>music</code> command.</li>
+                    <li>Added: <code>quote</code> command.</li>
+                    <li>Added: <code>sys</code> command.</li>
+                    <li>Added: <code>time</code> command.</li>
                 </ul>
             </details>
         </details>
     </main>
 
     <footer>
-        <p>Made by <a href="https://etrusci.org" target="_blank">arT2</a> for <a href="https://vrchat.com/home/user/usr_3519790d-ed85-4cd1-965e-ffb99ba003e0" target="_blank">FoxyFoo</a> and her crew.</p>
+        <p>
+            <strong>Data the Discord Bot</strong><br>
+            <em>a friendly Discord bot.</em>
+        </p>
+        <p>
+            Made by <a href="https://etrusci.org" target="_blank">arT2</a>
+            for <a href="https://vrchat.com/home/user/usr_3519790d-ed85-4cd1-965e-ffb99ba003e0" target="_blank">FoxyFoo</a>
+            and her circle.
+        </p>
     </footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            fetch('./doc.json', { cache: 'no-cache' })
+            .then(response => response.json())
+            .then(data => render_cmd_doc(data))
+            .catch(error => console.error('Boo:', error))
+        })
+
+        const render_cmd_doc = (data) => {
+            target = document.querySelector('.cmd_doc')
+            for (const cmd_key in data.command) {
+                cmd = document.createElement('ul')
+                opt = ``
+                for (const opt_key in data.command[cmd_key].option) {
+                    opt += `<li><code class="opt">${opt_key}</code> ${data.command[cmd_key].option[opt_key]}</li>`
+                }
+                if (opt != '') {
+                    opt = `<ul><li>options:</li>${opt}</ul>`
+                }
+                cmd.innerHTML = `
+                    <li>
+                        <code>/${cmd_key}</code>
+                        ${data.command[cmd_key].description}
+                        ${opt}
+                    </li>
+                `
+                target.append(cmd)
+            }
+        }
+    </script>
+
 </body>
 </html>
