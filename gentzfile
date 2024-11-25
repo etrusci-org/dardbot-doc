@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+
+import datetime
+import json
+import pathlib
+
+
+
+
+doc_file: pathlib.Path = pathlib.Path('./dist/doc.json').resolve()
+tz_file: pathlib.Path = pathlib.Path('./dist/timezones.txt').resolve()
+
+
+if __name__ == '__main__':
+    tz_list: str = "\n".join(json.loads(doc_file.read_text())['timezone'])
+    tz_list = f"# Timezones Data knows about\n# Last updated {datetime.datetime.fromtimestamp(doc_file.stat().st_mtime).strftime('%Y-%m-%d')}\n\n{tz_list}"
+    tz_file.write_text(tz_list)
