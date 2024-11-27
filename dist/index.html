@@ -10,13 +10,15 @@
         body { padding-bottom: 10rem; }
         h1, h2 { display: none; }
         h3 { font-size: inherit; margin: 0 0 .5rem 0; }
-        header nav img.avatar { width: auto; height: 50px; border-radius: 50%; cursor: zoom-in; }
-        header nav img.avatar:hover { height: 200px; }
         details summary { font-weight: bold; }
         details summary:hover { color: var(--pico-primary); }
         table { font-size: 85%; }
         td { vertical-align: top; }
         li { vertical-align: middle; }
+        img.logo { width: auto; height: 100px; border-radius: 50%; }
+        img.logo:hover { height: 250px; }
+        .flex { display: flex; flex-direction: row; flex-wrap: wrap; gap: 1rem; align-content: start; align-items: stretch; justify-content: start; }
+        .flex div:last-child { margin-left: auto; }
     </style>
 
     <title>Data the Discord Bot</title>
@@ -25,19 +27,14 @@
     <header class="container">
         <h1>Data the Discord Bot</h1>
 
-        <nav>
-            <ul>
-                <li>
-                    <img class="avatar" src="./data.png" alt="Data himself">
-                    <strong>Data the Discord Bot</strong>
-                    <a href="https://status.ourspace.ch/status/dardbot" target="_blank"><img src="https://status.ourspace.ch/api/badge/17/status" alt="dardbot status"></a>
-                </li>
-            </ul>
-            <ul>
-                <li><a href="https://vrc.group/THEDEN.1431" target="_blank">THE DEN</a></li>
-            </ul>
-        </nav>
-
+        <div class="flex">
+            <div><img class="logo" src="./data.png" alt="Data himself"></div>
+            <div>
+                <strong>Data the Discord Bot</strong><br>
+                <a href="https://status.ourspace.ch/status/dardbot" target="_blank"><img src="https://status.ourspace.ch/api/badge/17/status" alt="dardbot status"></a>
+            </div>
+            <div><a href="https://vrc.group/THEDEN.1431" target="_blank"><img class="logo" src="./den-logo.png" alt="The DEN"></a></div>
+        </div>
     </header>
 
 
