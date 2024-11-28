@@ -82,6 +82,12 @@
 
             <p>We are on the road to the first stable version. All feedback is welcome!</p>
 
+            <!--
+            Unreleased:
+            - Added: kticker command
+            - Various other fixes, enhancements and stuff
+            -->
+
             <h3>beta3 - 2024-11-24</h3>
             <ul>
                 <li>Removed: <code>anto</code> command.</li>
@@ -184,9 +190,14 @@
                     tzlist_link = ` A list of available timezones can be found <a href="./timezones.txt">here</a>.`
                 }
 
+                let aplist_link = ``
+                if (cmd_key == 'kticker') {
+                    aplist_link = ` A list of available asset pairs can be found <a href="./assetpairs.txt">here</a>.`
+                }
+
                 td1.innerHTML = `<code>/${cmd_key}</code>`
                 td2.innerHTML = opt.join('<br>')
-                td3.innerHTML = data.command[cmd_key].description + tzlist_link
+                td3.innerHTML = data.command[cmd_key].description + tzlist_link + aplist_link
 
                 tr.append(td1, td2, td3)
 

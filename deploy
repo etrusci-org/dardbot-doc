@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+./genapfile
+
 ./gentzfile
 
-rsync --exclude doc.json -r -t --progress --delete -c -l -H -z -s dist/ dardbot:/srv/www/dardbot.ourspace.ch/public/
+rsync -r -t --progress --delete -c -l -H -z -s dist/ dardbot:/srv/www/dardbot.ourspace.ch/public/
