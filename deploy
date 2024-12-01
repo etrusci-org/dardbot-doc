@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-./genapfile
+# ./genapfile
 
-./gentzfile
+# ./gentzfile
 
 rsync -r -t --progress --delete -c -l -H -z -s dist/ dardbot:/srv/www/dardbot.ourspace.ch/public/

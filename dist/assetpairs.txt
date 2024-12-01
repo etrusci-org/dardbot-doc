@@ -1,5 +1,5 @@
 # Asset pairs Data knows about
-# Last updated 2024-11-28
+# Last update 2024-12-01
 
 1INCHEUR
 1INCHUSD
