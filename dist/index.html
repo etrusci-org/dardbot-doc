@@ -19,6 +19,7 @@
         img.logo:hover { height: 250px; }
         .flex { display: flex; flex-direction: row; flex-wrap: wrap; gap: 1rem; align-content: start; align-items: stretch; justify-content: start; }
         .flex div:last-child { margin-left: auto; }
+        code { white-space: nowrap; }
     </style>
 
     <title>Data the Discord Bot</title>
@@ -62,14 +63,13 @@
         <details>
             <h2>Commands</h2>
             <summary>[ commands ]</summary>
-
             <table>
-
                 <thead>
                     <tr>
                         <th>Command</th>
                         <th>Options</th>
                         <th>Description</th>
+                        <th>Public Response</th>
                     </tr>
                 </thead>
                 <tbody class="cmd_doc"></tbody>
@@ -179,6 +179,7 @@
                 const td1 = document.createElement('td')
                 const td2 = document.createElement('td')
                 const td3 = document.createElement('td')
+                const td4 = document.createElement('td')
 
                 const opt = []
                 for (const opt_key in data.command[cmd_key].option) {
@@ -187,19 +188,20 @@
 
                 let tzlist_link = ``
                 if (cmd_key == 'time') {
-                    tzlist_link = ` A list of available timezones can be found <a href="./timezones.txt">here</a>.`
+                    tzlist_link = `<br><a href="./timezones.txt">timezones.txt</a>`
                 }
 
                 let aplist_link = ``
                 if (cmd_key == 'kticker') {
-                    aplist_link = ` A list of available asset pairs can be found <a href="./assetpairs.txt">here</a>.`
+                    aplist_link = `<br><a href="./assetpairs.txt">assetpairs.txt</a>`
                 }
 
                 td1.innerHTML = `<code>/${cmd_key}</code>`
                 td2.innerHTML = opt.join('<br>')
                 td3.innerHTML = data.command[cmd_key].description + tzlist_link + aplist_link
+                td4.innerHTML = `${data.command[cmd_key]['public_response'] ? 'Yes' : 'No, <em>only you can see it</em>'}`
 
-                tr.append(td1, td2, td3)
+                tr.append(td1, td2, td3, td4)
 
                 target?.append(tr)
             }
