@@ -8,32 +8,29 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.sand.min.css">
     <style>
         body { padding-bottom: 10rem; }
-        h1, h2 { display: none; }
+        h1 { font-size: 1.5rem; margin: .5rem 0 0 0; }
+        h2 { display: none; }
         h3 { font-size: inherit; margin: 0 0 .5rem 0; }
         details summary { font-weight: bold; }
         details summary:hover { color: var(--pico-primary); }
-        table { font-size: 85%; }
+        table { font-size: 80%; }
         td { vertical-align: top; }
         li { vertical-align: middle; }
-        img.logo { width: auto; height: 100px; border-radius: 50%; }
-        img.logo:hover { height: 250px; }
+        code { white-space: nowrap; }
+        img.logo { width: auto; height: 150px; border-radius: 50%; }
         .flex { display: flex; flex-direction: row; flex-wrap: wrap; gap: 1rem; align-content: start; align-items: stretch; justify-content: start; }
         .flex div:last-child { margin-left: auto; }
-        code { white-space: nowrap; }
     </style>
 
     <title>Data the Discord Bot</title>
 </head>
 <body>
     <header class="container">
-        <h1>Data the Discord Bot</h1>
-
         <div class="flex">
             <div><img class="logo" src="./data.png" alt="Data himself"></div>
             <div>
-                <strong>Data the Discord Bot</strong><br>
+                <h1>Data the Discord Bot</h1>
                 <a href="https://status.ourspace.ch/status/dardbot" target="_blank"><img src="https://status.ourspace.ch/api/badge/17/status" alt="dardbot status"></a>
-                <a href="https://github.com/etrusci-org/dardbot-doc/discussions/categories/requests-feedback-help" target="_blank">Forum</a>
             </div>
             <div><a href="https://vrc.group/THEDEN.1431" target="_blank"><img class="logo" src="./den-logo.png" alt="The DEN"></a></div>
         </div>
@@ -69,7 +66,7 @@
                         <th>Command</th>
                         <th>Options</th>
                         <th>Description</th>
-                        <th>Public Response</th>
+                        <th>Response Visibility</th>
                     </tr>
                 </thead>
                 <tbody class="cmd_doc"></tbody>
@@ -82,6 +79,12 @@
             <summary>[ changelog ]</summary>
 
             <p>We are on the road to the first final version. All feedback is welcome!</p>
+
+            <h3>beta3.2 - 2024-01-03</h3>
+            <ul>
+                <li>Changed: <code>music</code>, <code>qrcode</code>, <code>rhyme</code> and <code>time</code> responses are now only visible to the user that invoked the command. Reasoning was "to reduce bot spam".</li>
+                <li>Added: <code>dice</code> command.</li>
+            </ul>
 
             <h3>beta3.1 - 2024-11-28</h3>
             <ul>
@@ -167,6 +170,7 @@
                             detail.removeAttribute('open')
                         }
                     })
+                    target.scrollIntoView()
                 })
             })
         }
@@ -199,7 +203,7 @@
                 td1.innerHTML = `<code>/${cmd_key}</code>`
                 td2.innerHTML = opt.join('<br>')
                 td3.innerHTML = data.command[cmd_key].description + tzlist_link + aplist_link
-                td4.innerHTML = `${data.command[cmd_key]['public_response'] ? 'Yes' : 'No, <em>only you can see it</em>'}`
+                td4.innerHTML = `${data.command[cmd_key]['public_response'] ? 'Public' : 'Private'}`
 
                 tr.append(td1, td2, td3, td4)
 
