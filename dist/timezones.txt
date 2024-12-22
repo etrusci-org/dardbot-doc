@@ -1,5 +1,5 @@
 # Timezones Data knows about
-# Last update 2024-12-03
+# Last update 2024-12-22
 
 Africa/Abidjan
 Africa/Accra
