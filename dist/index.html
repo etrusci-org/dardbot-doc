@@ -80,6 +80,11 @@
 
             <p>We are on the road to the first final version. All feedback is welcome!</p>
 
+            <h3>beta3.3 - unreleased</h3>
+            <ul>
+                <li>Changed: `kticker` command response cosmetics.</li>
+            </ul>
+
             <h3>beta3.2 - 2024-01-03</h3>
             <ul>
                 <li>Changed: <code>music</code>, <code>qrcode</code>, <code>rhyme</code> and <code>time</code> responses are now only visible to the user that invoked the command. Reasoning was "to reduce bot spam".</li>
@@ -155,25 +160,25 @@
             fetch('./doc.json', { cache: 'no-cache' })
             .then(response => response.json())
             .then((data) => {
-                init_accordion()
+                // init_accordion()
                 render_cmd_doc(data)
             })
             .catch(error => console.error('Boo:', error))
         })
 
-        const init_accordion = () => {
-            const details = document.querySelectorAll('details')
-            details.forEach((target) => {
-                target.addEventListener('click', () => {
-                    details.forEach((detail) => {
-                        if (detail !== target) {
-                            detail.removeAttribute('open')
-                        }
-                    })
-                    target.scrollIntoView()
-                })
-            })
-        }
+        // const init_accordion = () => {
+        //     const details = document.querySelectorAll('details')
+        //     details.forEach((target) => {
+        //         target.addEventListener('click', () => {
+        //             details.forEach((detail) => {
+        //                 if (detail !== target) {
+        //                     detail.removeAttribute('open')
+        //                 }
+        //             })
+        //             target.scrollIntoView()
+        //         })
+        //     })
+        // }
 
         const render_cmd_doc = (data) => {
             const target = document.querySelector('.cmd_doc')
