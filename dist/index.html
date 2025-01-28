@@ -80,6 +80,13 @@
 
             <p>We are on the road to the first final version. All feedback is welcome!</p>
 
+            <h3>1.0.0 - unreleased</h3>
+            <ul>
+                <li>Removed: <code>sysinfo</code> command response does not include CPU and shell users counts anymore.</li>
+                <li>Changed: <code>echo</code> command response does not suppress embeds anymore.</li>
+                <li>Added: <code>sysinfo</code> command response now also includes bot uptime.</li>
+            </ul>
+
             <h3>beta3.3 - 2024-01-21</h3>
             <ul>
                 <li>Changed: <code>kticker</code> command response cosmetics.</li>
@@ -159,26 +166,9 @@
         window.addEventListener('load', () => {
             fetch('./doc.json', { cache: 'no-cache' })
             .then(response => response.json())
-            .then((data) => {
-                // init_accordion()
-                render_cmd_doc(data)
-            })
+            .then((data) => render_cmd_doc(data))
             .catch(error => console.error('Boo:', error))
         })
-
-        // const init_accordion = () => {
-        //     const details = document.querySelectorAll('details')
-        //     details.forEach((target) => {
-        //         target.addEventListener('click', () => {
-        //             details.forEach((detail) => {
-        //                 if (detail !== target) {
-        //                     detail.removeAttribute('open')
-        //                 }
-        //             })
-        //             target.scrollIntoView()
-        //         })
-        //     })
-        // }
 
         const render_cmd_doc = (data) => {
             const target = document.querySelector('.cmd_doc')
@@ -195,19 +185,17 @@
                     opt.push(`<code>${opt_key}</code> ${data.command[cmd_key].option[opt_key]}`)
                 }
 
-                let tzlist_link = ``
+                let description_extra = ''
                 if (cmd_key == 'time') {
-                    tzlist_link = `<br><a href="./timezones.txt">timezones.txt</a>`
+                    description_extra = `<br>For an overview of timezones to query see <a href="./timezones.txt">timezones.txt</a>. Data may already know newer items when you invoke this command, so some zones may not yet be listed in this file.`
                 }
-
-                let aplist_link = ``
-                if (cmd_key == 'kticker') {
-                    aplist_link = `<br><a href="./assetpairs.txt">assetpairs.txt</a>`
+                else if (cmd_key == 'kticker') {
+                    description_extra = `<br>For an overview of asset pairs to query see <a href="./assetpairs.txt">assetpairs.txt</a>. Data may already know newer items when you invoke this command, so some asset pairs may not yet be listed in this file.`
                 }
 
                 td1.innerHTML = `<code>/${cmd_key}</code>`
                 td2.innerHTML = opt.join('<br>')
-                td3.innerHTML = data.command[cmd_key].description + tzlist_link + aplist_link
+                td3.innerHTML = data.command[cmd_key].description + description_extra
                 td4.innerHTML = `${data.command[cmd_key]['public_response'] ? 'Public' : 'Private'}`
 
                 tr.append(td1, td2, td3, td4)
