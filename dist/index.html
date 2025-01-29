@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="dark light">
+    <meta name="color-scheme" content="darkx light">
 
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.sand.min.css">
+
     <style>
         body { padding-bottom: 10rem; }
-        h1 { font-size: 1.5rem; margin: .5rem 0 0; }
-        h2 { display: none; }
+        nav strong:first-of-type { font-size: 130%; white-space: nowrap; color: var(--pico-primary); }
+        h1, h2 { display: none; }
         h3 { font-size: inherit; margin: 0 0 .5rem; }
         details summary { font-weight: bold; }
         details summary:hover { color: var(--pico-primary); }
@@ -17,49 +19,58 @@
         td { vertical-align: top; }
         li { vertical-align: middle; }
         code { white-space: nowrap; }
-        img.logo { width: auto; height: 150px; border-radius: 50%; }
-        .flex { display: flex; flex-direction: row; flex-wrap: wrap; gap: 1rem; align-content: start; align-items: stretch; justify-content: start; }
-        .flex div:last-child { margin-left: auto; }
+        img.logo { width: 150px; border-radius: 50%; margin-right: 15px; }
+        footer { margin-top: 3rem; text-align: center; }
     </style>
 
     <title>Data the Discord Bot</title>
 </head>
 <body>
     <header class="container">
-        <div class="flex">
-            <div><img class="logo" src="./data.png" alt="Data himself"></div>
-            <div>
-                <h1>Data the Discord Bot</h1>
-                <a href="https://status.ourspace.ch/status/dardbot" target="_blank"><img src="https://status.ourspace.ch/api/badge/17/status" alt="dardbot status"></a>
-            </div>
-            <div><a href="https://vrc.group/THEDEN.1431" target="_blank"><img class="logo" src="./den-logo.png" alt="The DEN"></a></div>
-        </div>
+        <nav>
+            <ul>
+                <li>
+                    <img class="logo" src="./data.png" alt="Data himself">
+                    <strong>Data the Discord Bot</strong>
+                </li>
+            </ul>
+            <ul>
+                <li title="current live version - see changelog">v1.0.0</li>
+                <li title="uptime monitor"><a href="https://status.ourspace.ch/status/dardbot">status</a></li>
+            </ul>
+        </nav>
     </header>
 
 
     <main class="container">
-
         <details>
             <h2>Usage</h2>
             <summary>[ usage ]</summary>
 
-            <p>To start type <code>/</code> in the message input box, and then look for Data's commands in the list that will pop-up.</p>
-            <!-- <p><img src="./screenshot.png" alt="Commands list"></p> -->
+            <p>
+                To start, type <code>/</code> in the message input box, and then look for Data's commands in the list that will pop-up.<br>
+                On the left side of the commands list should be Data's avatar visible - click on it to show only his commands.<br>
+                <img src="./doc1.png" alt="1">
+            </p>
 
-            <p>On the left side of the commands list should be Data's avatar visible - click on it to show only his commands.</p>
-            <!-- <p><img src="./screenshot.png" alt="Dedicated commands panel"></p> -->
+            <p>
+                Automatic documentation is provided once you start using a command.<br>
+                <img src="./doc2.png" alt="2">
+            </p>
 
-            <p>Automatic documentation is provided once you start using a command. You can do so by either typing its slash command or click it in the list.</p>
-            <!-- <p><img src="./screenshot.png" alt="Automatic documentation"></p> -->
+            <p>
+                Server admins can adjust usage permission in the server integrations settings.<br>
+                <img src="./doc3.png" alt="3">
+            </p>
 
-            <p>Server admins can adjust the permission for each command in the server apps settings.</p>
-            <!-- <p><img src="./screenshot.png" alt="Server app settings"></p> -->
         </details>
 
+        <hr>
 
         <details>
             <h2>Commands</h2>
             <summary>[ commands ]</summary>
+
             <table>
                 <thead>
                     <tr>
@@ -73,26 +84,27 @@
             </table>
         </details>
 
+        <hr>
 
         <details>
             <h2>Changelog</h2>
             <summary>[ changelog ]</summary>
 
-            <p>We are on the road to the first final version. All feedback is welcome!</p>
+            <p>Whenever a new version goes live, the changes that affect users will be reported here.</p>
 
-            <h3>1.0.0 - unreleased</h3>
+            <h3>v1.0.0 - 2025-01-28</h3>
             <ul>
                 <li>Removed: <code>sysinfo</code> command response does not include CPU and shell users counts anymore.</li>
                 <li>Changed: <code>echo</code> command response does not suppress embeds anymore.</li>
                 <li>Added: <code>sysinfo</code> command response now also includes bot uptime.</li>
             </ul>
 
-            <h3>beta3.3 - 2024-01-21</h3>
+            <h3>beta3.3 - 2025-01-21</h3>
             <ul>
                 <li>Changed: <code>kticker</code> command response cosmetics.</li>
             </ul>
 
-            <h3>beta3.2 - 2024-01-03</h3>
+            <h3>beta3.2 - 2025-01-03</h3>
             <ul>
                 <li>Changed: <code>music</code>, <code>qrcode</code>, <code>rhyme</code> and <code>time</code> responses are now only visible to the user that invoked the command. Reasoning was "to reduce bot spam".</li>
                 <li>Added: <code>dice</code> command.</li>
@@ -139,37 +151,40 @@
             </ul>
         </details>
 
+        <hr>
 
         <details>
             <h2>About</h2>
             <summary>[ about ]</summary>
 
             <p>
-                Made by <a href="https://etrusci.org" target="_blank">arT2</a>
+                Made upon request
+                by <a href="https://etrusci.org" target="_blank">arT2</a>
                 for <a href="https://vrchat.com/home/user/usr_3519790d-ed85-4cd1-965e-ffb99ba003e0" target="_blank">FoxyFoo</a>
                 and her circle.
             </p>
             <p>
                 <strong>Privacy:</strong>
-                The bot runs on a host rented and managed directly by arT2.
-                No user data is shared with or sold to third parties.
                 Currently the bot does not retain any history of conversations or activities.
-                In the future, this may change if features like generating statistics or other enhancements are introduced; however, users will be informed.
-                Although the source-code repository is not public, FoxyFoo has access to it.
+                In the future, this may change if features like generating statistics or other enhancements are introduced; however, this will be reflected in the changelog.
+                In any case no user data is shared with or sold to third parties.
             </p>
         </details>
+
+        <hr>
     </main>
+
+
+    <footer class="container">
+        <p>
+            Data is currently active in these awesome communities:<br>
+            <a href="https://vrc.group/THEDEN.1431" target="_blank"><img class="logo" src="./logo-theden.png" alt="The DEN"></a>
+        </p>
+    </footer>
 
 
     <script>
         // @ts-check
-        window.addEventListener('load', () => {
-            fetch('./doc.json', { cache: 'no-cache' })
-            .then(response => response.json())
-            .then((data) => render_cmd_doc(data))
-            .catch(error => console.error('Boo:', error))
-        })
-
         const render_cmd_doc = (data) => {
             const target = document.querySelector('.cmd_doc')
 
@@ -203,6 +218,13 @@
                 target?.append(tr)
             }
         }
+
+        window.addEventListener('load', () => {
+            fetch('./doc.json', { cache: 'no-cache' })
+            .then(response => response.json())
+            .then((data) => render_cmd_doc(data))
+            .catch(error => console.error('Boo:', error))
+        })
     </script>
 </body>
 </html>
