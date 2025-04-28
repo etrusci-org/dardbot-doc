@@ -1,5 +1,5 @@
 # Asset pairs Data knows about
-# Last update 2025-04-24
+# Last update 2025-04-28
 
 1INCHEUR
 1INCHUSD
@@ -733,6 +733,8 @@ SIGMAEUR
 SIGMAUSD
 SKYEUR
 SKYUSD
+SNEKEUR
+SNEKUSD
 SNXEUR
 SNXUSD
 SNXXBT
